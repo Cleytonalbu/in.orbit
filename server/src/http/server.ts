@@ -37,7 +37,7 @@ app.post('/goals',{
     })
 } )
 
-// Metas compridas 
+// Adicionar Metas compridas 
 app.post('/completions', {
     schema: {
         body: z.object({
@@ -47,12 +47,10 @@ app.post('/completions', {
 }, async (request)=>{
     const {goalId} = request.body
 
-    const result = await createGoalCompletion({
+    await createGoalCompletion({
         goalId,
     })
-    return {
-        result,
-    }
+    
 } )
 
 
